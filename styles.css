@@ -1,0 +1,101 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+  }
+  /* style for the body */
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f0dae5, #5dd7ea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    background-color: rgba(247, 255, 141);
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+    /* mouse hovering color */
+  .button:hover {
+    background-color: rgba(255, 255, 255, .9);}
+  
+  .button.number {
+    grid-column: span 1;}
+  
+  .button.operation {
+    grid-column: span 1;
+    background-color: #f06292;
+    color: white;}
+  
+  .button.operation:hover {
+    background-color: #ff95b8;}
+  
+  .button.clear {
+    grid-column: span 2;
+    background-color: #4db6ac;
+    color: white;}
+  
+  .button.clear:hover {
+    background-color: #8ad0c9;
+  }
+  
+  .button.delete {
+    background-color: #ef5350;
+    color: white;}
+  
+  .button.delete:hover {
+    background-color: #e57373;}
+  
+  .button.equals {
+    grid-column: span 2;
+    color: #333;
+    background-color: #ffa974;
+    }
+  
+  .button.equals:hover {
+    background-color: #ffd68f;}
+  
+  .output {
+    background-color: rgb(0, 0, 0);
+    grid-column: 1 / -1;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;}
+  
+  .output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;}
+  
+  .output .current-operand {
+    color: white;
+    font-size: 2.5rem;}
